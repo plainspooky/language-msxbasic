@@ -1,0 +1,61 @@
+'scopeName': 'source.msxbasic'
+'name': 'MSX-BASIC'
+'fileTypes': ['asc', 'bas', 'ldr']
+'patterns': [
+  { # mark as invalid lines that do not begin with a line number.
+    'match': '^\\D+'
+    'name': 'invalid.illegal.msxbasic'
+  }
+  { # numeric decimals which may include scientific notation.
+    'match': '(^\\d+)|(\\b(([0-9]+(\\.|\\s*E\\s*)?[0-9]*)|(\\.[0-9]+))\\b)'
+    'name': 'constant.numeric.msxbasic'
+  }
+  { # binary, octal and hexadecimal numbers... (in bold)
+    'match': '&(B[01]{1,16}|O[0-7]{1,3}|H[A-F0-9]{1,4})'
+    'name': 'markup.bold.msxbasic'
+  }
+  { # strings are everything between double quotes or until the end of line.
+    'match': '(")([^"]*(")|.*\\n|.*$)'
+    'name': 'meta.string.quoted.double.msxbasic'
+  }
+  { # all operators.
+    'match': ':|;|,|=|\\+|-|\\*|/|\\^|\\|<|>|\\\\|AND|EQV|IMP|MOD|NOT|OR|XOR|TPSET|TPRESET|TAND|TOR|TXOR'
+    'name': 'keyword.operator.msxbasic'
+  }
+  { # functions without arguments are invalid.
+    'match': '\\b([A-Z]+\\$?)\\s*\\(\\)'
+    'name': 'invalid.illegal.msxbasic'
+  }
+  { # some commands can't be used inside a running program, so mark as invalid.
+    'match': '\\b(AUTO|CONT|DELETE|MERGE|RENUM)\\b'
+    'name': 'invalid.illegal.msxbasic'
+  }
+  { # numeric functions.
+    'match': '\\b(ABS|ASC|ATN|BASE|CDBL|CINT|COS|CSNG|CSRLIN|CVD|CVI|CVS|DSKF|EOF|ERL|ERR|EXP|FIX|FN|FRE|INP|INSTR|INT|L?POS|LEN|LOC|LOG|PAD|PDL|POINT|RND|SGN|SIN|SPC|SQR|STICK|STRIG|TAB|TAN|USR[0-9]?|V?PEEK|VAL|VARPTR|VDP)\\b'
+    'name': 'entity.name.function.msxbasic'
+  }
+  { # string functions and DSKI and DSKO as well.
+    'match': '\\b((ATTR|BIN|CHR|CLS|DSKI|DSKO|HEX|INKEY|INPUT|LEFT|MID|MKD|MKI|MKS|OCT|SPACE|STRING|STR)(\\$))\\b'
+    'name': 'entity.name.function.msxbasic'
+  }
+  { # MSX-BASIC standard commands.
+    'match': '\\b(AS|BEEP|CIRCLE|CLEAR|CLOSE|CMD|COLOR|DATA|DEF ?(DBL|FN|INT|SNG|STR|USR[0-9]?)|DIM|DRAW|ELSE|END|ERASE|ERROR|FOR|GET|GOSUB|GOTO|IF|INTERVAL|IPL|KEY|L?PRINT|LET|LINE|LIST|LOCATE|MAXFILES|MERGE|MOTOR|NEW|NEXT|OFF|ON|OPEN|OUT|PAINT|PLAY|POKE|PUT|PSET|PRESET|READ|RESTORE|RESUME|RETURN|RUN|SCREEN|SOUND|SPRITE|STEP|STOP|SWAP|TIME|THEN|TO|TROFF|TRON|USING|VPOKE|WAIT|WIDTH|[BC]?LOAD|[BC]?SAVE)\\b'
+    'name': 'keyword.control.msxbasic'
+  }
+  { # DISK, MSX2 and MSX2+ extensions.
+    'match': '\\b(COPY|FIELD|GET|KANJI|KILL|L?FILES|NAME|PUT|SET ?(ADJUST|BEEP|DATA|PAGE|PASSWORD|PROMPT|SCREEN|SCROLL|TIME|TITLE|VIDEO)|[LR]SET)'
+    'name': 'keyword.control.msxbasic'
+  }
+  { # Common BASIC extensions provided by CALL.
+    'match': '\\b(CALL|_) ?(ANK|CLS|FORMAT|KANJI[0-3]?|MEMINI|MFILES|MKILL|MNAME|PAUSE|PCMPLAY|PCMREC|TURBO ?O(FF|N)|VERIFY)?'
+    'name': 'variable.language.msxbasic'
+  }
+  { # MSX-DOS2 and NEXTOR Extensions.
+    'match': '\\b(CALL|_) ?(CHDIR|CHDRV|CURDRV|DRIVERS|DRVINFO|FDISK|LOCKDRV|MAPDRV|MAPDRVL|MKDIR|NEXTOR|RAMDISK|RMDIR|USR)?'
+    'name': 'variable.language.msxbasic'
+  }
+  { # REM command (comments)...
+    'match': '((REM|\\\').*(\\n|$))'
+    'name': 'comment.line.msxbasic'
+  }
+]

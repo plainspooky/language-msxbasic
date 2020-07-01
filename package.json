@@ -1,0 +1,31 @@
+{
+  "name": "language-msxbasic",
+  "version": "0.1.1",
+  "description": "MSX-BASIC language support in Atom",
+  "author": "Giovanni Nunes <giovanni.nunes@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://atom.io/packages/language-msxbasic",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plainspooky/language-msxbasic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/plainspooky/language-msxbasic/issues"
+  },
+  "keywords": [
+    "Atom",
+    "package",
+    "language",
+    "basic",
+    "msx",
+    "msx2",
+    "msx2+",
+    "msx turbo r",
+    "syntax",
+    "highlight"
+  ],
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {}
+}
