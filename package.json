@@ -1,6 +1,6 @@
 {
   "name": "language-msxbasic",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "MSX-BASIC language support in Atom",
   "author": "Giovanni Nunes <giovanni.nunes@gmail.com>",
   "license": "ISC",
